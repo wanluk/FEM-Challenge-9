@@ -1,0 +1,218 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+:root{
+    --p-cyan:hsl(179, 62%, 43%);
+    --p-lighCyan:#4ABFBD;
+    --p-brightYellow:hsl(71, 73%, 54%);
+
+    --n-lightGray:hsl(204, 43%, 93%);
+    --n-grayishBlue:hsl(218, 22%, 67%);
+
+    --s-lightCyanParagraph:#95D9D8;
+}
+
+.fs-900{font-size: 32px;}
+.fs-700{font-size: 16px;}
+.fs-500{font-size: 15px;}
+.fs-300{font-size: 14px;}
+
+.fw-700{font-weight: 700;}
+.fw-400{font-weight: 400;}
+
+.fc-cyan{color: var(--p-cyan);}
+.fc-lightCyan{color: var(--s-lightCyanParagraph);}
+.fc-bYellow{color: var(--p-brightYellow);}
+.fc-gBlue{color: var(--n-grayishBlue);}
+.fc-white{color: white;}
+
+h1{
+    font-size: 24px;
+}
+
+h2{
+    font-size: 18px;
+}
+
+body{
+    background-color: var(--n-lightGray);
+    font-family: 'Karla';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 318px 318px;
+}
+
+/* ----- Gridcards ----- */
+
+.gridcard{
+    padding: 40px 40px 40px 40px;
+}
+
+/* ----- Gridcard One ----- */
+
+.join{
+    background-color: white;
+    border-radius: 8px 8px 0px 0px;
+    grid-column: span 2;
+}
+
+.join h2{
+    margin-top: 1.25rem;
+}
+
+.join p{
+    margin-top: 0.625rem;
+}
+
+/* ----- Gridcard Two ----- */
+
+.subscription{
+    background-color: var(--p-cyan);
+    border-radius: 0px 0px 0px 8px;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.625rem;
+    margin-top: 1rem;
+}
+
+button{
+    background-color: var(--p-brightYellow);
+    border-radius: 5px;
+    border: none;
+    height: 48px;
+    width: 237px;
+    margin-top: 1.5rem;
+}
+
+/* ----- Gridcard Three ----- */
+
+.pitch{
+    background-color: var(--p-lighCyan);
+    border-radius: 0px 0px 8px 0px;
+}
+
+.pitch p{
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+    
+    .grid-container{
+        width:  100% - 2rem;
+        grid-template-columns: 311px;
+    }
+
+    .gridcard{
+        padding: 24px 24px 24px 24px;
+    }
+
+    .join{
+        grid-column: 1;
+    }
+
+    .join h1{
+        font-size: 20px;
+    }
+
+    .join h2{
+        font-size: 15px;
+    }
+    .join p{
+        font-size: 14px;
+    }
+
+    .subscription{
+        border-radius: 0 0 0 0;
+    }
+
+    button{
+        width: 263px;
+    }
+
+    .pitch{
+        border-radius: 0 0 8px 8px;
+    }
+
+}
